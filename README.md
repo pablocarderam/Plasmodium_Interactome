@@ -1,4 +1,4 @@
-# Plasmodium_Interactome
+# Plasmodium Interactome
 An interactive visualization and graphical user interface for the data in
 Hillier et al. (2019), DOI [10.1016/j.celrep.2019.07.019](https://doi.org/10.1016/j.celrep.2019.07.019).
 
