@@ -1,277 +1,97 @@
 <!-- START SIGMA IMPORTS -->
-<script src="./src/sigma.core.js"></script>
-<script src="./src/conrad.js"></script>
-<script src="./src/utils/sigma.utils.js"></script>
-<script src="./src/utils/sigma.polyfills.js"></script>
-<script src="./src/sigma.settings.js"></script>
-<script src="./src/classes/sigma.classes.dispatcher.js"></script>
-<script src="./src/classes/sigma.classes.configurable.js"></script>
-<script src="./src/classes/sigma.classes.graph.js"></script>
-<script src="./src/classes/sigma.classes.camera.js"></script>
-<script src="./src/classes/sigma.classes.quad.js"></script>
-<script src="./src/classes/sigma.classes.edgequad.js"></script>
-<script src="./src/captors/sigma.captors.mouse.js"></script>
-<script src="./src/captors/sigma.captors.touch.js"></script>
-<script src="./src/renderers/sigma.renderers.canvas.js"></script>
-<script src="./src/renderers/sigma.renderers.webgl.js"></script>
-<script src="./src/renderers/sigma.renderers.svg.js"></script>
-<script src="./src/renderers/sigma.renderers.def.js"></script>
-<script src="./src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
-<script src="./src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
-<script src="./src/renderers/webgl/sigma.webgl.edges.def.js"></script>
-<script src="./src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
-<script src="./src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.labels.def.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edges.def.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
-<script src="./src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
-<script src="./src/renderers/svg/sigma.svg.utils.js"></script>
-<script src="./src/renderers/svg/sigma.svg.nodes.def.js"></script>
-<script src="./src/renderers/svg/sigma.svg.edges.def.js"></script>
-<script src="./src/renderers/svg/sigma.svg.edges.curve.js"></script>
-<script src="./src/renderers/svg/sigma.svg.labels.def.js"></script>
-<script src="./src/renderers/svg/sigma.svg.hovers.def.js"></script>
-<script src="./src/middlewares/sigma.middlewares.rescale.js"></script>
-<script src="./src/middlewares/sigma.middlewares.copy.js"></script>
-<script src="./src/misc/sigma.misc.animation.js"></script>
-<script src="./src/misc/sigma.misc.bindEvents.js"></script>
-<script src="./src/misc/sigma.misc.bindDOMEvents.js"></script>
-<script src="./src/misc/sigma.misc.drawHovers.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title> Plasmodium Interactome </title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="src/style.css">
+</head>
+
+<!-- Here are all the imports needed for Sigma.js -->
+
+<script src="./sigma/src/sigma.core.js"></script>
+<script src="./sigma/src/conrad.js"></script>
+<script src="./sigma/src/utils/sigma.utils.js"></script>
+<script src="./sigma/src/utils/sigma.polyfills.js"></script>
+<script src="./sigma/src/sigma.settings.js"></script>
+<script src="./sigma/src/classes/sigma.classes.dispatcher.js"></script>
+<script src="./sigma/src/classes/sigma.classes.configurable.js"></script>
+<script src="./sigma/src/classes/sigma.classes.graph.js"></script>
+<script src="./sigma/src/classes/sigma.classes.camera.js"></script>
+<script src="./sigma/src/classes/sigma.classes.quad.js"></script>
+<script src="./sigma/src/classes/sigma.classes.edgequad.js"></script>
+<script src="./sigma/src/captors/sigma.captors.mouse.js"></script>
+<script src="./sigma/src/captors/sigma.captors.touch.js"></script>
+<script src="./sigma/src/renderers/sigma.renderers.canvas.js"></script>
+<script src="./sigma/src/renderers/sigma.renderers.webgl.js"></script>
+<script src="./sigma/src/renderers/sigma.renderers.svg.js"></script>
+<script src="./sigma/src/renderers/sigma.renderers.def.js"></script>
+<script src="./sigma/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="./sigma/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="./sigma/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="./sigma/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="./sigma/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="./sigma/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.utils.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="./sigma/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="./sigma/src/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="./sigma/src/middlewares/sigma.middlewares.copy.js"></script>
+<script src="./sigma/src/misc/sigma.misc.animation.js"></script>
+<script src="./sigma/src/misc/sigma.misc.bindEvents.js"></script>
+<script src="./sigma/src/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="./sigma/src/misc/sigma.misc.drawHovers.js"></script>
 <!-- END SIGMA IMPORTS -->
-<script src="./plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
-<script src="./plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+
+<!-- These imports are additional imports used to read the database -->
+<script src="./sigma/plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
+<script src="./sigma/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
+
 <!-- [...] -->
+
+<!-- This container will house the network -->
 <div id="container">
-  <style>
-    body {
-      color: #333;
-      font-size: 14px;
-      font-family: Lato, sans-serif;
-    }
-    a {
-    	text-decoration: none;
-    }
-    #sigma-container {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      stroke-opacity: 0.1;
-    }
-    #control-pane {
-      top: 10px;
-      /*bottom: 10px;*/
-      right: 10px;
-      position: absolute;
-      width: 280px;
-      background-color: rgb(249, 247, 237);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    #control-pane > div {
-      margin: 10px;
-      overflow-x: auto;
-    }
-    .line {
-      clear: both;
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 12px 0 0 0;
-      border-bottom: 1px solid #aac789;
-      background: transparent;
-    }
-    h2, h3, h4 {
-      padding: 0;
-      font-variant: small-caps;
-    }
-    .green {
-      color: #437356;
-    }
-    h2.underline {
-      color: #437356;
-      background: #f4f0e4;
-      margin: 0;
-      border-radius: 2px;
-      padding: 8px 12px;
-      font-weight: 700;
-    }
-    .hidden {
-      display: none;
-      visibility: hidden;
-    }
-  </style>
+  <!-- Style the UI--this has been moved to a separate stylesheet -->
+
+  <!-- UI content -->
   <div id="sigma-container"></div>
   <div id="control-pane">
-    <h2 class="underline">Plasmodium interactome</h2>
+    <h2 class="underline">Plasmodium Interactome</h2>
 
     <div>
-      <h3>search gene id</h3>
-      <input type="text" id="gene_id" name="gene_id" value="PF3D7_0917900">
-      <button id="search_btn">Search</button>
-      <span class="line"></span>
       <p>Data from <a href="https://doi.org/10.1016/j.celrep.2019.07.019" target="_blank">10.1016/j.celrep.2019.07.019</a>.</p>
       <p>
-      Made by <a href="http://pablo-cardenas.com/" target="_blank">Pablo Cardenas</a> at the <a href="https://web.mit.edu/nileslab/" target="_blank">Niles Lab</a>,
-      <a href="http://be.mit.edu/" target="_blank">MIT BE</a>.</p>
+      Made by <a href="http://pablo-cardenas.com/" target="_blank">Pablo Cárdenas</a> at the <a href="https://web.mit.edu/nileslab/" target="_blank">Niles Lab</a>,
+      <a href="http://be.mit.edu/" target="_blank">MIT BE</a> using <a href="http://sigmajs.org/" target="_blank">sigma.js</a>.</p>
       <p><a href="https://github.com/pablocarderam/Plasmodium_Interactome" target="_blank">GitHub src</a>.</p>
+			<span class="line"></span>
+      <p><b>Scroll, drag, and click.</b></p>
+			<p>Nodes (genes) colored according to putative protein complex cluster (colors repeat themselves, <b>black</b> is no cluster predicted).</p>
+			<p><font color="#56B4E9"><b>Blue lines</b></font> show interactions with selected gene, <font color="black"><b>black</b></font> are interactions among the gene's neighbors.</p>
+			<span class="line"></span>
+			<h3 id="gene-name">search or click a gene</h3>
+      <input type="text" id="gene_id" name="gene_id" value="PF3D7_0917900">
+      <button id="search_btn">Search ID</button>
+			<h3><span id="neighbors_btn" class="btn"><u>neighbors</u></span> | <span id="terms_btn" class="btn">associated terms</span></h3>
+			<div class="scroll-list" id="scroll-list"></div>
+
     </div>
 
   </div>
 </div>
-<script>
-
-  /**
-   * DOM utility functions
-   */
-   var _ = {
-    $: function (id) {
-      return document.getElementById(id);
-    },
-  };
-
-  // Add a method to the graph model that returns an
-  // object with every neighbors of a node inside:
-  sigma.classes.graph.addMethod('neighbors', function(nodeId) {
-    var k,
-        neighbors = {},
-        index = this.allNeighborsIndex[nodeId] || {};
-
-    for (k in index)
-      neighbors[k] = this.nodesIndex[k];
-
-    return neighbors;
-  });
-
-  sigma.parsers.json(
-    './dat/plasmodium_interactome.json',
-    {
-      container: 'sigma-container',
-      settings: {
-        labelThreshold: 1000,
-        minNodeSize: 0.8,
-        maxNodeSize: 3,
-        enableHovering: true,
-        defaultEdgeColor: 'rgba(50,50,50,0.1)',
-        defaultNodeColor: 'rgba(155,5,0,0.1)',
-        edgeColor: 'default'
-      }
-    },
-    function(s) {
-      // We first need to save the original colors of our
-      // nodes and edges, like this:
-      s.graph.nodes().forEach(function(n) {
-        n.originalColor = n.color;
-        n.originalSize = n.size; //  size as well
-      });
-      s.graph.edges().forEach(function(e) {
-        e.originalColor = e.color;
-      });
-
-      function selectNode(nodeId) {
-        var toKeep = s.graph.neighbors(nodeId);
-        toKeep[nodeId] = s.graph.nodes(nodeId);
-
-        var g_sel = { // new graph to draw on top
-          nodes: [],
-          edges_1: [], // 1 neighbor
-          edges_2: [], // 2 neighbors
-          edges_direct: [] // direct connection
-        };
-
-        s.graph.edges().forEach(function(e) {
-          if (toKeep[e.source] && toKeep[e.target])
-            e.color = e.originalColor;
-          else
-            e.color = '#eee';
-
-          if (e.source == nodeId || e.target == nodeId) { // if touching the selected node being redrawn
-            g_sel.edges_direct.push(e); // add to new graph
-            e.color = '#56B4E9';
-          }
-          else if ((toKeep[e.source] || toKeep[e.target]) && !(toKeep[e.source] && toKeep[e.target])) // if touching one of the nodes being redrawn
-            g_sel.edges_1.push(e); // add to new graph
-          else if ((toKeep[e.source] && toKeep[e.target])) // if touching 2 of the nodes being redrawn
-            g_sel.edges_2.push(e); // add to new graph
-        });
-
-        s.graph.nodes().forEach(function(n) {
-          if (toKeep[n.id]) {
-            n.color = n.originalColor;
-            n.size = n.originalSize; // set back to original size
-            if (n.id == nodeId) { // if target, color differently and make larger
-              n.color = '#FFC300';
-              n.size = n.originalSize*2;
-            }
-            g_sel.nodes.push(n); // add to new graph
-            s.graph.dropNode(n.id); // remove from current graph
-          }
-          else
-            n.color = '#eee';
-        });
-
-        for (var i = 0; i < g_sel.nodes.length; i++) { // re-add nodes
-          s.graph.addNode(g_sel.nodes[i]);
-        }
-        for (var i = 0; i < g_sel.edges_1.length; i++) { // re-add edges
-          s.graph.addEdge(g_sel.edges_1[i]);
-        }
-        for (var i = 0; i < g_sel.edges_2.length; i++) { // re-add edges
-          s.graph.addEdge(g_sel.edges_2[i]);
-        }
-        for (var i = 0; i < g_sel.edges_direct.length; i++) { // re-add edges
-          s.graph.addEdge(g_sel.edges_direct[i]);
-        }
-
-        // Since the data has been modified, we need to
-        // call the refresh method to make the colors
-        // update effective.
-        s.refresh();
-      }
-
-      // When a node is clicked, we check for each node
-      // if it is a neighbor of the clicked one. If not,
-      // we set its color as grey, and else, it takes its
-      // original color.
-      // We do the same for the edges, and we only keep
-      // edges that have both extremities colored.
-      s.bind('clickNode', function(e) {
-        var nodeId = e.data.node.id;
-        selectNode(nodeId);
-      });
-
-      // When the stage is clicked, we just color each
-      // node and edge with its original color.
-      s.bind('clickStage', function(e) {
-        s.graph.nodes().forEach(function(n) {
-          n.color = n.originalColor;
-          n.size = n.originalSize; // set back to original size
-        });
-
-        s.graph.edges().forEach(function(e) {
-          e.color = e.originalColor;
-        });
-
-        // Same as in the previous event:
-        s.refresh();
-      });
-
-      function searchGene(e) {
-        console.log(_.$('gene_id').value);
-        selectNode(_.$('gene_id').value);
-      }
-
-      _.$('search_btn').addEventListener("click", searchGene);
-    }
-  );
-</script>
+<script src="./src/interactome.js"></script>
 <!-- [...] -->
