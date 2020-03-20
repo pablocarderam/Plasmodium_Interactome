@@ -114,6 +114,8 @@ sigma.parsers.json(
       neighbor_list = []; // reset neighbors list
       term_list = []; // reset terms list
 
+      var description = ""; // stores description of selected gene
+
       var toKeep = s.graph.neighbors(nodeId); // object contains nodes to render as neighbors
       toKeep[nodeId] = s.graph.nodes(nodeId); // add selected node as one of the ones to be rendered
 
@@ -157,8 +159,9 @@ sigma.parsers.json(
             n.size = n.originalSize*3; // make it larger than the others! Actually rescales others in sigma.js
 
             var label_txt_arr = n.label.split(': '); // search for delimiter between ID and explanation
+            console.log(label_txt_arr.length);
             if (label_txt_arr.length > 1) // if label was split into two,
-              gene_name_ui.innerHTML = gene_name_ui.innerHTML + '<br>' + label_txt_arr[1]; // show explanation as subtitle to gene ID
+              description = label_txt_arr[1]; // store explanation for subtitle to gene ID
           }
           else // if not selected node,
             neighbor_list.push(n.id); // add node to neighbor list
@@ -216,6 +219,7 @@ sigma.parsers.json(
         gene_name_ui.innerHTML = gene_name_ui.innerHTML + genes_in_id[i] + ' <a href="https://plasmodb.org/plasmo/app/record/gene/' + genes_in_id[i] + '" target="_blank">(PlasmoDB)</a><br>';
           // set gene name element in ui with a link to PlasmoDB
       }
+      gene_name_ui.innerHTML = gene_name_ui.innerHTML + '<br>' + description; // show explanation as subtitle to gene ID
 
       // Since the data has been modified, we need to
       // call the refresh method to make the colors
