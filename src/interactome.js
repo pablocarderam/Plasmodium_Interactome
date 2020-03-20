@@ -159,7 +159,6 @@ sigma.parsers.json(
             n.size = n.originalSize*3; // make it larger than the others! Actually rescales others in sigma.js
 
             var label_txt_arr = n.label.split(': '); // search for delimiter between ID and explanation
-            console.log(label_txt_arr.length);
             if (label_txt_arr.length > 1) // if label was split into two,
               description = label_txt_arr[1]; // store explanation for subtitle to gene ID
           }
