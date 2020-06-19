@@ -380,5 +380,5 @@ function restart() {
   render('./dat/plasmodium_interactome_'+_.$('dataset').value+'.json');
 }
 
-_.$('dataset').value = 'full';
-render('./dat/plasmodium_interactome_full.json');
+_.$('dataset').value = 'hil';
+render('./dat/plasmodium_interactome_hil.json');
