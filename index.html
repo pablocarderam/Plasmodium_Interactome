@@ -68,12 +68,12 @@
   <!-- Style the UI--this has been moved to a separate stylesheet -->
 
   <!-- UI content -->
-  <div id="sigma-container"></div>
+  <div id="sigma-container-outer"><div id="sigma-container"></div></div>
   <div id="control-pane">
     <h2 class="underline">Plasmodium Interactome</h2>
 
     <div>
-      <p>Data from <a href="https://doi.org/10.1016/j.celrep.2019.07.019" target="_blank">10.1016/j.celrep.2019.07.019</a>.</p>
+      <p>Data from <a href="https://doi.org/10.1016/j.celrep.2019.07.019" target="_blank">10.1016/j.celrep.2019.07.019</a> and <a href="https://doi.org/10.1038/nature04104" target="_blank">10.1038/nature04104</a>.</p>
       <p>
       Made by <a href="http://pablo-cardenas.com/" target="_blank">Pablo Cárdenas</a> at the <a href="https://web.mit.edu/nileslab/" target="_blank">Niles Lab</a>,
       <a href="http://be.mit.edu/" target="_blank">MIT BE</a> using <a href="http://sigmajs.org/" target="_blank">sigma.js</a>.</p>
@@ -83,6 +83,12 @@
 			<p>Nodes (genes) colored according to putative protein complex cluster (colors repeat themselves, <b>black</b> is no cluster predicted).</p>
 			<p><font color="#56B4E9"><b>Blue lines</b></font> show interactions with selected gene, <font color="black"><b>black</b></font> are interactions among the gene's neighbors.</p>
 			<span class="line"></span>
+			<h3>Dataset:
+			<select name="dataset" id="dataset">
+			  <option value="hil">Hillier et al. (2019)</option>
+			  <option value="y2h">LaCount et al. (2005)</option>
+			  <option value="full" selected>All data</option>
+			</select></h3>
 			<h3 id="gene-name">search or click a gene</h3>
       <input type="text" id="gene_id" name="gene_id" value="PF3D7_0917900">
       <button id="search_btn">Search ID</button>
